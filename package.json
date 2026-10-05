@@ -18,7 +18,10 @@
     "format": "prettier --write \"js/**/*.js\"",
     "format:check": "prettier --check \"js/**/*.js\"",
     "build:pack": "node ./scripts/build-private-bundle.mjs",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "lhci": "lhci autorun",
+    "lhci:desktop": "lhci autorun --collect.settings.preset=desktop",
+    "lhci:mobile": "lhci autorun --collect.settings.preset=mobile"
   },
   "lint-staged": {
     "js/**/*.js": [

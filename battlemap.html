@@ -11,6 +11,7 @@
 
   <!-- Site CSS -->
   <link href="/css/site.css" rel="stylesheet" />
+  <link href="/css/dark-mode.css" rel="stylesheet" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/dndFavicon (2).png" />
@@ -180,6 +181,14 @@
       #sidebarToggle { display: none; }
     }
   </style>
+
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#65390c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DM's Toolbox">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -240,6 +249,13 @@
         </ul>
       </div>
     </div>
+
+      <!-- Dark Mode Toggle -->
+      <li class="nav-item">
+        <button class="btn btn-outline-light btn-sm" id="darkModeToggle" aria-label="Toggle dark mode">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+      </li>
   </nav>
 
   <div class="map-wrap">
@@ -3960,5 +3976,38 @@
 <script data-goatcounter="https://maybeme1990.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
   <script src="/js/easter-egg-2048.js" defer></script>
+  <script src="/js/pwa.js"></script>
+
+<script>
+(function() {
+  const toggle = document.getElementById('darkModeToggle');
+  const html = document.documentElement;
+  
+  // Check for saved preference or default to system preference
+  const savedTheme = localStorage.getItem('dm-toolbox-theme');
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const defaultTheme = savedTheme || (systemDark ? 'dark' : 'light');
+  
+  html.setAttribute('data-bs-theme', defaultTheme);
+  updateToggleIcon(defaultTheme);
+  
+  toggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-bs-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-bs-theme', next);
+    localStorage.setItem('dm-toolbox-theme', next);
+    updateToggleIcon(next);
+  });
+  
+  function updateToggleIcon(theme) {
+    const icon = toggle.querySelector('i');
+    if (theme === 'dark') {
+      icon.className = 'bi bi-sun';
+    } else {
+      icon.className = 'bi bi-moon-stars';
+    }
+  }
+})();
+</script>
 </body>
 </html>

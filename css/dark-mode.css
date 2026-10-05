@@ -1,0 +1,353 @@
+/**
+ * Dark Mode Styles for The DM's Toolbox
+ * 
+ * This file provides dark mode support using CSS custom properties.
+ * It works with Bootstrap 5.3's built-in dark mode (data-bs-theme="dark")
+ * and adds custom styling for the DM's Toolbox theme.
+ */
+
+/* ========================================
+   Dark Mode Color Variables
+   ======================================== */
+
+:root {
+  /* Light mode (default) */
+  --dm-bg-primary: #ffffff;
+  --dm-bg-secondary: #f8f9fa;
+  --dm-bg-tertiary: #e9ecef;
+  --dm-text-primary: #212529;
+  --dm-text-secondary: #6c757d;
+  --dm-border-color: #dee2e6;
+  --dm-accent-primary: #65390c;
+  --dm-accent-secondary: #e2c957;
+  --dm-accent-highlight: #6fcbc6;
+  --dm-nav-bg: #2b1a08;
+  --dm-card-bg: #ffffff;
+  --dm-input-bg: #ffffff;
+  --dm-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] {
+  --dm-bg-primary: #1a1a2e;
+  --dm-bg-secondary: #16213e;
+  --dm-bg-tertiary: #0f3460;
+  --dm-text-primary: #eafff7;
+  --dm-text-secondary: #adb5bd;
+  --dm-border-color: #495057;
+  --dm-accent-primary: #e2c957;
+  --dm-accent-secondary: #65390c;
+  --dm-accent-highlight: #6fcbc6;
+  --dm-nav-bg: #0f1620;
+  --dm-card-bg: #16213e;
+  --dm-input-bg: #1a1a2e;
+  --dm-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+
+body {
+  background-color: var(--dm-bg-primary);
+  color: var(--dm-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+
+.navbar {
+  background-color: var(--dm-nav-bg) !important;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--dm-text-primary) !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--dm-accent-secondary) !important;
+}
+
+/* ========================================
+   Cards and Containers
+   ======================================== */
+
+.card,
+.backdrop,
+.splash-backdrop {
+  background-color: var(--dm-card-bg) !important;
+  border-color: var(--dm-border-color) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ========================================
+   Forms and Inputs
+   ======================================== */
+
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: var(--dm-input-bg) !important;
+  border-color: var(--dm-border-color) !important;
+  color: var(--dm-text-primary) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--dm-input-bg) !important;
+  border-color: var(--dm-accent-primary) !important;
+  color: var(--dm-text-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(101, 57, 12, 0.25);
+}
+
+/* ========================================
+   Tables
+   ======================================== */
+
+.table {
+  color: var(--dm-text-primary) !important;
+  transition: color 0.3s ease;
+}
+
+.table thead th {
+  background-color: var(--dm-bg-secondary) !important;
+  border-color: var(--dm-border-color) !important;
+}
+
+.table tbody tr {
+  background-color: var(--dm-bg-primary) !important;
+}
+
+.table tbody tr:hover {
+  background-color: var(--dm-bg-secondary) !important;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.btn-primary {
+  background-color: var(--dm-accent-primary);
+  border-color: var(--dm-accent-primary);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--dm-accent-secondary);
+  border-color: var(--dm-accent-secondary);
+  color: #fff;
+}
+
+.btn-outline-primary {
+  color: var(--dm-accent-primary);
+  border-color: var(--dm-accent-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--dm-accent-primary);
+  border-color: var(--dm-accent-primary);
+  color: #fff;
+}
+
+/* ========================================
+   Dropdowns
+   ======================================== */
+
+.dropdown-menu {
+  background-color: var(--dm-card-bg) !important;
+  border-color: var(--dm-border-color) !important;
+}
+
+.dropdown-item {
+  color: var(--dm-text-primary) !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--dm-bg-secondary) !important;
+  color: var(--dm-accent-primary) !important;
+}
+
+/* ========================================
+   Modals
+   ======================================== */
+
+.modal-content {
+  background-color: var(--dm-card-bg) !important;
+  border-color: var(--dm-border-color) !important;
+  color: var(--dm-text-primary) !important;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--dm-border-color) !important;
+}
+
+/* ========================================
+   Toasts
+   ======================================== */
+
+.toast {
+  background-color: var(--dm-card-bg) !important;
+  border-color: var(--dm-border-color) !important;
+  color: var(--dm-text-primary) !important;
+}
+
+/* ========================================
+   List Groups
+   ======================================== */
+
+.list-group-item {
+  background-color: var(--dm-card-bg) !important;
+  border-color: var(--dm-border-color) !important;
+  color: var(--dm-text-primary) !important;
+}
+
+.list-group-item:hover {
+  background-color: var(--dm-bg-secondary) !important;
+}
+
+/* ========================================
+   Alerts
+   ======================================== */
+
+.alert {
+  background-color: var(--dm-bg-secondary) !important;
+  border-color: var(--dm-border-color) !important;
+  color: var(--dm-text-primary) !important;
+}
+
+/* ========================================
+   Progress Bars
+   ======================================== */
+
+.progress {
+  background-color: var(--dm-bg-tertiary) !important;
+}
+
+/* ========================================
+   Borders and Dividers
+   ======================================== */
+
+.border,
+.border-top,
+.border-bottom,
+.border-start,
+.border-end {
+  border-color: var(--dm-border-color) !important;
+}
+
+hr {
+  border-color: var(--dm-border-color) !important;
+}
+
+/* ========================================
+   Text Colors
+   ======================================== */
+
+.text-muted {
+  color: var(--dm-text-secondary) !important;
+}
+
+.text-primary {
+  color: var(--dm-accent-primary) !important;
+}
+
+/* ========================================
+   Links
+   ======================================== */
+
+a {
+  color: var(--dm-accent-primary);
+}
+
+a:hover {
+  color: var(--dm-accent-secondary);
+}
+
+/* ========================================
+   Code and Pre
+   ======================================== */
+
+code,
+pre {
+  background-color: var(--dm-bg-secondary) !important;
+  color: var(--dm-text-primary) !important;
+}
+
+/* ========================================
+   Scrollbar (Webkit)
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dm-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dm-border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dm-text-secondary);
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+
+::selection {
+  background-color: var(--dm-accent-primary);
+  color: #fff;
+}
+
+/* ========================================
+   Focus States
+   ======================================== */
+
+*:focus-visible {
+  outline: 2px solid var(--dm-accent-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+  body {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  
+  .navbar,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+}

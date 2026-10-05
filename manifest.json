@@ -1,0 +1,34 @@
+{
+  "name": "The DM's Toolbox - Initiative Tracker",
+  "short_name": "DM's Toolbox",
+  "description": "A comprehensive, browser-based suite of tools for tabletop RPG Game Masters. Battle maps, initiative tracking, characters, generators, and journal tools.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1a1a2e",
+  "theme_color": "#65390c",
+  "categories": ["games", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}
