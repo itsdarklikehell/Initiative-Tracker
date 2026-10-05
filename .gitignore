@@ -38,3 +38,4 @@ docs/repo-profile.md
 
 # Local Wrangler secrets (relay/cloudflare)
 .dev.vars
+.lighthouseci/

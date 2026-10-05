@@ -8,12 +8,15 @@ const PRECACHE_ASSETS = [
   '/css/site.css',
   '/css/initiative.css',
   '/css/characters-mobile.css',
+  '/css/dark-mode.css',
   '/js/site.js',
+  '/js/pwa.js',
   '/images/BGMap.png',
   '/images/DMsToolboxLogo.png',
   '/images/dndFavicon (2).png',
   '/images/icon-192.png',
   '/images/icon-512.png',
+  '/images/apple-touch-icon.png',
   '/manifest.json'
 ];
 
